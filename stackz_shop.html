@@ -1,53 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Stackz Robux Shop</title>
-<style>
-body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
-.container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; }
-h1 { text-align: center; }
-.section { margin-bottom: 25px; }
-label { font-weight: bold; }
-input { padding: 8px; width: 100%; margin-top: 5px; }
-.result { margin-top: 10px; font-size: 18px; font-weight: bold; }
-.notice { background: #ffe5e5; padding: 10px; border-left: 5px solid red; margin-bottom: 20px; }
-</style>
+    <script>
+        function copyAddress(address) {
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Address copied to clipboard!');
+            });
+        }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stackz Shop</title>
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+        @keyframes floatUp {0%{transform:translateY(0);}50%{transform:translateY(-6px);}100%{transform:translateY(0);} }
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        header {
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: #111;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+        .card {
+            animation: fadeIn 0.8s ease forwards;
+            animation-delay: 0.2s;
+            
+            background: #111;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 12px rgba(255,255,255,0.08);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: scale(1.03);
+        }
+        .card h3 {
+            font-size: 1.5rem;
+        }
+        .card p {
+            opacity: 0.8;
+        }
+        .buy-btn {
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .buy-btn:hover {
+            background: #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            opacity: 0.7;
+        }
+        .crypto-box {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px dashed #fff;
+            border-radius: 12px;
+            background: #000;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<h1>Stackz Robux Shop</h1>
+    <header style="animation: floatUp 3s ease-in-out infinite;">STACKZ SHOP</header>
 
-<div class="notice">
-<strong>IMPORTANT:</strong> I DO NOT COVER THE 30% ROBUX TAXES.
-</div>
+    <section class="hero">
+        <h2>Discounted Robux & Premium Services</h2>
+        <p>Fast • Safe • Crypto Only</p>
+    </section>
 
-<div class="section">
-<h2>Pricing</h2>
-<ul>
-<li>1,000 Robux = $3.00 USD</li>
-<li>5,000+ Robux = $2.75 USD per 1k</li>
-<li>10,000+ Robux = $2.50 USD per 1k</li>
-</ul>
-</div>
+    <section class="products">
+        <div class="card">
+            <h3>Discounted Robux</h3>
+            <p><strong>Pricing Tiers:</strong></p>
+                <ul style="list-style:none; padding:0; line-height:1.6;">
+                    <li>1,000 Robux — <strong>$3.00 USD</strong></li>
+                    <li>5,000+ Robux — <strong>$2.75 USD per 1k</strong></li>
+                    <li>10,000+ Robux — <strong>$2.50 USD per 1k</strong></li>
+                </ul>
+            <a class="buy-btn" href="#" onclick="copyAddress('3Nq8wkmt3iaiVZc4aXexVveL8q3FXv9Vje')">Copy BTC Address
+            <a class="buy-btn" href="#" onclick="copyAddress('MKMSYWYkPX4Nyb3CFMq2zH95CAhsauNsE6')">Copy LTC Address
+        </div>
 
-<div class="section">
-<h2>Custom Amount Calculator</h2>
-<label>Enter Robux Amount:</label>
-<input type="number" id="robuxInput" placeholder="e.g., 3500" />
-<div class="result" id="priceOutput">Price: $0.00</div>
-</div>
+        <div class="card">
+            <h3>Roblox Premium</h3>
+            <p>Premium pricing: 1000 Robux value — <strong>$3 USD</strong></p>
+            <a class="buy-btn" href="#" onclick="copyAddress('3Nq8wkmt3iaiVZc4aXexVveL8q3FXv9Vje')">Copy BTC Address
+            <a class="buy-btn" href="#" onclick="copyAddress('MKMSYWYkPX4Nyb3CFMq2zH95CAhsauNsE6')">Copy LTC Address
+        </div>
 
-</div>
+        <div class="card">
+            <h3>Custom Orders</h3>
+            <p>Need a special amount? Contact support.</p>
+            <button class="buy-btn">BTC Payment</button>
+            <button class="buy-btn">LTC Payment</button>
+        </div>
+    </section>
 
-<script>
-document.getElementById("robuxInput").addEventListener("input", function() {
-    let robux = parseInt(this.value) || 0;
-    let pricePerK = robux >= 10000 ? 2.50 : robux >= 5000 ? 2.75 : 3.00;
-    let total = (robux / 1000) * pricePerK;
-    document.getElementById("priceOutput").innerText = "Price: $" + total.toFixed(2);
-});
-</script>
+    <section class="hero">
+        <h2>Accepted Payments</h2>
+        <div class="crypto-box">
+            <p><strong>Bitcoin Address:</strong> 3Nq8wkmt3iaiVZc4aXexVveL8q3FXv9Vje</p>
+            <p><strong>Litecoin Address:</strong> MKMSYWYkPX4Nyb3CFMq2zH95CAhsauNsE6</p>
+        </div>
+    </section>
 
+    <section class="hero" style="padding:40px;">
+        <div style="margin-bottom:20px; padding:15px; background:#111; border-left:4px solid #fff; border-radius:10px; font-size:1rem;">
+            <strong>Notice:</strong> I DO NOT COVER THE 30% ROBUX TAXES.
+        </div
+        <h2>Robux Price Calculator</h2>
+        <p>Enter the amount of Robux you want to buy:</p>
+        <input id="calcRobux" type="number" placeholder="e.g. 3500" oninput="calcPrice()" style="padding:10px; width:200px; border-radius:10px; border:none; margin-top:10px; text-align:center;">
+        <div id="calcResult" style="margin-top:20px; font-size:1.3rem; font-weight:600;"></div>
+    </section>
+
+    <script>
+        function calcPrice() {
+            const amount = parseInt(document.getElementById('calcRobux').value);
+            let price = 0;
+
+            if (!amount || amount <= 0) {
+                document.getElementById('calcResult').innerText = "";
+                return;
+            }
+
+            if (amount >= 10000) {
+                price = (amount / 1000) * 2.50;
+            } else if (amount >= 5000) {
+                price = (amount / 1000) * 2.75;
+            } else {
+                price = (amount / 1000) * 3.00;
+            }
+
+            document.getElementById('calcResult').innerText = `Total Price: $${price.toFixed(2)} USD`;
+        }
+    </script>
+
+<footer>
+        © 2025 Stackz Shop — All Rights Reserved
+    </footer>
+    <div id="usernamePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:flex; align-items:center; justify-content:center;">
+        <div style="background:#111; padding:30px; border-radius:20px; width:90%; max-width:400px; text-align:center; box-shadow:0 0 10px rgba(255,255,255,0.2);">
+            <h2>Payment Sent</h2>
+            <p>Please enter your Roblox username so we can deliver your purchase.</p>
+            <input id="rbxUser" type="text" placeholder="Roblox Username" style="padding:10px; width:90%; border-radius:10px; margin-top:10px; border:none;">
+            <button onclick="submitUsername()" style="margin-top:15px; padding:10px 20px; background:#fff; border:none; border-radius:12px; cursor:pointer;">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('usernamePopup').style.display = 'flex';
+        }
+
+        function submitUsername() {
+            const user = document.getElementById('rbxUser').value;
+            if (!user.trim()) { alert('Please enter a username.'); return; }
+            alert('Username submitted: ' + user);
+            document.getElementById('usernamePopup').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
